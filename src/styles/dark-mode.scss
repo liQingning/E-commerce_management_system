@@ -1,0 +1,25 @@
+// 导入全局变量
+@import './variable.scss';
+
+// 定义一个CSS变量，方便在JavaScript中修改
+:root {
+  --base-glass-bgcolor: #{getBaseGlassBgcolor()}; // 默认使用普通模式的背景色
+  --base-menu-hover-bgcolor: #{getBaseMenuHoverBgcolor()};
+  --base-menu-active-bgcolor: #{getBaseMenuActiveBgcolor()};
+  --base-separator-icon-color: #{getBaseMenuHoverBgcolor('dark')};
+  --base-screen-textcolor: #{getBaseMenuActiveBgcolor('dark')};
+}
+
+// 当html有dark类时，覆盖CSS变量
+html.dark {
+  --base-glass-bgcolor: #{getBaseGlassBgcolor('dark')}; // 使用暗黑模式的背景色
+  --base-menu-hover-bgcolor: #{getBaseMenuHoverBgcolor('dark')};
+  --base-menu-active-bgcolor: #{getBaseMenuActiveBgcolor('dark')};
+  --base-separator-icon-color: #{getBaseMenuHoverBgcolor()};
+  --base-screen-textcolor: #{getBaseMenuActiveBgcolor()};
+}
+
+// 提供一个通用的glass-bg类，方便在组件中使用
+.glass-bg {
+  background-color: var(--base-glass-bgcolor);
+}

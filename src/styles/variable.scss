@@ -1,0 +1,31 @@
+//提供项目scss全局变量
+
+$base-menu-width:15vw;
+$base-menu-fold-width:110px;
+$base-glass-bgcolor: (
+  '': rgba(255, 255, 255, 0.2),  // 普通模式
+  'dark': rgba(0, 0, 0, 0.2)     // 暗黑模式
+);
+$base-menu-hover-bgcolor:(
+  '': rgba(255, 255, 255, 0.7),  // 普通模式
+  'dark': rgba(0, 0, 0, 0.7)     // 暗黑模式
+);
+$base-menu-active-bgcolor:(
+  '': rgba(255, 255, 255),  // 普通模式
+  'dark': rgba(0, 0, 0)     // 暗黑模式
+);
+// 获取当前模式的玻璃背景色
+@function getBaseGlassBgcolor($mode: '') {
+  @return map-get($base-glass-bgcolor, $mode);
+  
+}
+@function getBaseMenuHoverBgcolor($mode: '') {
+  @return map-get($base-menu-hover-bgcolor, $mode);
+}
+@function getBaseMenuActiveBgcolor($mode: '') {
+  @return map-get($base-menu-active-bgcolor, $mode);
+}
+$base-tabber-height:50px;
+
+$base-backdrop-filter: blur(15px) saturate(140%) ;
+
